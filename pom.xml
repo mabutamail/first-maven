@@ -19,6 +19,11 @@
 
   <name>first-maven</name>
 
+<!--  ${project.groupId} -->
+<!--  ${settings.interactiveMode} -->
+<!--  ${spring.version} -->
+<!--  ${env.PATH} -->
+<!--  System.getProperty -D -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
@@ -69,6 +74,12 @@
 
   <build>
     <!--    <finalName>Root</finalName>-->
+    <resources>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
     <pluginManagement>
       <plugins>
         <plugin>
