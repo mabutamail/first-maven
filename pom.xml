@@ -19,12 +19,13 @@
 
   <name>first-maven</name>
 
-<!--  ${project.groupId} -->
-<!--  ${settings.interactiveMode} -->
-<!--  ${spring.version} -->
-<!--  ${env.PATH} -->
-<!--  System.getProperty -D -->
+  <!--  ${project.groupId} -->
+  <!--  ${settings.interactiveMode} -->
+  <!--  ${spring.version} -->
+  <!--  ${env.PATH} -->
+  <!--  System.getProperty -D -->
   <properties>
+    <app.env>dev</app.env>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
@@ -85,7 +86,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>2.22.0</version>
+          <version>3.2.2</version>
           <executions>
             <execution>
               <goals>
@@ -182,19 +183,57 @@
         </plugin>
       </plugins>
     </pluginManagement>
-
-    <!--  M2_HOME/conf/settings.xml  -->
-    <!--  ~/.m2/settings.xml предпочтительно  -->
-    <!--  <distributionManagement>-->
-    <!--    <snapshotRepository>-->
-    <!--      <id>nexus</id>-->
-    <!--      <url>http://localhost:9000/repository/maven-snapshots/</url>-->
-    <!--    </snapshotRepository>-->
-    <!--    <repository>-->
-    <!--      <id>nexus</id>-->
-    <!--      <url>http://localhost:9000/repository/maven-releases/</url>-->
-    <!--    </repository>-->
-    <!--  </distributionManagement>-->
-
   </build>
+
+  <profiles>
+    <profile>
+      <id>prod</id>
+      <activation>
+<!--        <os>-->
+<!--          <family>windows</family>-->
+<!--        </os>-->
+<!--        <jdk>15</jdk>-->
+<!--        <activeByDefault>false</activeByDefault>-->
+<!--        <file>-->
+<!--          <exists>${basedir}/pom.xml</exists>-->
+<!--        </file>-->
+<!--        <property>-->
+<!--          <name>test.prop</name>-->
+<!--          <value>example</value>-->
+<!--        </property>-->
+      </activation>
+      <properties>
+        <app.env>prod</app.env>
+        <example>test-test</example>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <configuration>
+              <debug>false</debug>
+              <optimize>true</optimize>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <!--  M2_HOME/conf/settings.xml  -->
+  <!--  ~/.m2/settings.xml предпочтительно  -->
+  <!--  <distributionManagement>-->
+  <!--    <snapshotRepository>-->
+  <!--      <id>nexus</id>-->
+  <!--      <url>http://localhost:9000/repository/maven-snapshots/</url>-->
+  <!--    </snapshotRepository>-->
+  <!--    <repository>-->
+  <!--      <id>nexus</id>-->
+  <!--      <url>http://localhost:9000/repository/maven-releases/</url>-->
+  <!--    </repository>-->
+  <!--  </distributionManagement>-->
+
+
 </project>
