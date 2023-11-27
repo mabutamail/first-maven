@@ -2,7 +2,7 @@ package ru.zalex.service.service;
 
 import java.util.Optional;
 import ru.zalex.database.dao.UserDao;
-import ru.zalex.dto.UserDto;
+import ru.zalex.service.dto.UserDto;
 
 public class UserService {
 
