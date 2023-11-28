@@ -12,6 +12,7 @@
     <module>database</module>
     <module>service</module>
     <module>web</module>
+    <module>hello-plugin</module>
   </modules>
   <!--  <packaging>war</packaging>-->
   <!--  <packaging>jar</packaging> по умолчанию-->
