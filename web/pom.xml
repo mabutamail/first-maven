@@ -4,7 +4,7 @@
   <parent>
     <artifactId>first-maven</artifactId>
     <groupId>ru.zalex</groupId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>web</artifactId>
@@ -25,7 +25,7 @@
     <dependency>
       <groupId>ru.zalex</groupId>
       <artifactId>service</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
